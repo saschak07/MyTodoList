@@ -1,23 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-
+import NavBar from "./component/Navbar/Navbar";
+import ListContainer from "./containers/ListContainer";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <h1> My Todo list</h1>
+    <NavBar/>
+    <ListContainer/>
     </div>
   );
 }
