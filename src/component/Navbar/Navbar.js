@@ -4,7 +4,7 @@ const NavBar = () => {
     <a href="/" className="w3-bar-item w3-button">Home</a>
     <a href="/" className="w3-bar-item w3-button">Insert new Todo</a>
     <div className="w3-dropdown-hover">
-      <button className="w3-button">Dropdown</button>
+      <button className="w3-button">Sort By</button>
       <div className="w3-dropdown-content w3-bar-block w3-card-4">
         <a href="/" className="w3-bar-item w3-button">Priority</a>
         <a href="/" className="w3-bar-item w3-button">start Date</a>

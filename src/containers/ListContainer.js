@@ -18,16 +18,22 @@ class ListContainer extends Component{
             }
         ]
     }
+    handleCompletion = (todoId) =>{
+        let updatedSate = this.state
+        updatedSate.todos = updatedSate.todos.filter(data => data.id !== todoId)
+        this.setState(updatedSate)
+
+    }
     render( ){
-        const listItems = this.state.todos.map(data => {return(
+        const listItems = this.state.todos.map(data => 
             <ListItems
                 key = {data.id}
                 title = {data.title}
                 priority = {data.priority}
                 startDate = {data.startDate}
                 endDate = {data.endDate}
-                />
-        )})
+                onCompleteHandler = {(event)=>this.handleCompletion(data.id)}
+                />)
         return (
             <div>
                 {listItems}
