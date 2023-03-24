@@ -7,14 +7,14 @@ class ListContainer extends Component{
                 id: 101,
                 title: 'Learn react',
                 priority: 'HIGH',
-                startDate: '11-03-2023',
-                endDate: '21-03-2023'
+                startDate: new Date('2023-03-15'),
+                endDate: new Date('2023-03-12')
             },{
                 id: 102,
                 title: 'Learn node.js',
                 priority: 'MEDIUM',
-                startDate: '12-03-2023',
-                endDate: '22-03-2023'
+                startDate: new Date('2023-03-12'),
+                endDate: new Date('2023-03-15')
             }
         ]
     }
@@ -24,15 +24,22 @@ class ListContainer extends Component{
         this.setState(updatedSate)
 
     }
-    render( ){
+    handleSortByStartDate = () => {
+            let updatedSate = this.state
+            updatedSate.todos = updatedSate.todos.sort((dataA, dataB) => dataA.startDate - dataB.startDate)
+            this.setState(updatedSate)
+    }
+
+    render(){
         const listItems = this.state.todos.map(data => 
             <ListItems
                 key = {data.id}
                 title = {data.title}
                 priority = {data.priority}
-                startDate = {data.startDate}
-                endDate = {data.endDate}
+                startDate = {data.startDate.toDateString()}
+                endDate = {data.endDate.toDateString()}
                 onCompleteHandler = {(event)=>this.handleCompletion(data.id)}
+                onSortByStartDateHandler = {(event)=>this.handleSortByStartDate()}
                 />)
         return (
             <div>
@@ -40,7 +47,6 @@ class ListContainer extends Component{
             </div>
         )
     }
-    
 
 }
 

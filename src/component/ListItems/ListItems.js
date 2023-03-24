@@ -8,6 +8,9 @@ const ListItems = (props) => {
                 <button className='button-alignment'
                 onClick={props.onCompleteHandler}
                 >complete</button>
+                <button className='button-alignment'
+                onClick={props.onSortByStartDateHandler}
+                >Sort on Start Date</button>
             </div> )
 }
 
