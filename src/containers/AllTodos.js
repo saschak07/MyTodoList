@@ -30,11 +30,14 @@ const AllToDos = () => {
             //onCompleteHandler = {(event)=>this.handleCompletion(data.id)}
             />)
     return(
+        <div>
+        <h1> My Todo list</h1>
             <div>
                 <Navbar 
                 //onSortByStartDateHandler = {(event) => this.handleSortByStartDate()}
                 />
                 {listItems}
+            </div>
             </div>
     )
 }

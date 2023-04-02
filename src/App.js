@@ -1,12 +1,19 @@
 //import ListContainer from "./containers/ListContainer";
 import AllToDos from "./containers/AllTodos";
+import {createBrowserRouter,RouterProvider} from 'react-router-dom'
+import ToDoDetails from "./component/toDoDetails/toDoDetails";
+const route = createBrowserRouter([
+  {
+    path: '/',
+    element: <AllToDos/>
+  },{
+    path: '/toDetails/:title',
+    element: <ToDoDetails/>
+  }
+])
 function App() {
   return (
-    <div className="App">
-    <h1> My Todo list</h1>
-    {/* <ListContainer/> */}
-    <AllToDos/>
-    </div>
+    <RouterProvider router={route}/>
   );
 }
 

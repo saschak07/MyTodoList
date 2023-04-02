@@ -1,6 +1,9 @@
+import { Link } from 'react-router-dom'
 import './ListItems.css'
 const ListItems = (props) => {
-    return( <div className="w3-bar w3-green list-position">
+    return( 
+    <Link to={`/toDetails/${props.title}`}>
+    <div className="w3-bar w3-green list-position">
                 <div className="w3-bar-item">{props.title}</div>
                 <div className="w3-bar-item">{props.priority}</div>
                 <div className="w3-bar-item">{props.startDate}</div>
@@ -8,7 +11,9 @@ const ListItems = (props) => {
                 <button className='button-alignment'
                 onClick={props.onCompleteHandler}
                 >complete</button>
-            </div> )
+            </div> 
+            </Link>
+            )
 }
 
 export default ListItems
