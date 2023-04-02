@@ -3,11 +3,11 @@ import './toDoDetails.css'
 const ToDoDetails = () => {
   const navigate = useNavigate();
   const handleClose = () => {
-    navigate('/')
+    navigate('/toDoList')
   }
 
   const params = useParams();
-    return(<div className="w3-container container">
+    return(<div className="w3-container details-container">
     
     <div className="w3-card-4" style={{width:'50%'}}>
       <header className="w3-container w3-green">
